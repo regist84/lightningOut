@@ -1,1 +1,58 @@
-TEST
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" Access-Control-Allow-Origin:="*"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <!-- <link rel="stylesheet" href="/css/style.css" />-->
+
+
+    <title>Lightning Out</title>
+</head>
+
+<body onload="setToken()">
+
+<div id= 'tokenDiv' style='display: none;'> 
+</div>
+
+<div id="customEditFormLocator"></div>
+
+<script src="https://agenoves-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
+
+<script>
+
+	$Lightning.use("c:lightningOutApp",    // name of the Lightning app
+	        function() {                  // Callback once framework and app loaded
+	            $Lightning.createComponent(
+	                "c:customEditForm", // top-level component of your app
+	                { },                  // attributes to set on the component when created
+	                "customEditFormLocator",   // the DOM location to insert the component
+	                function(cmp) {
+	                    // callback when component is created and active on the page
+	                }
+	            );
+	        },
+            "https://agenoves-dev-ed.lightning.force.com/", // endpoint of org as lightningEndPointURI
+            //document.getElementById("tokenDiv").textContent
+            "00D0Y000000otHV!ARIAQNVI2HjU0J5pUsIQigynu0DiDv.rcV2dD86mynbprvsjtIksPhNvGy2glf3j_FIMNMBryVHVfOfdkeQ3TbWfGtNrH8_E" // access token as authToken 
+    );
+
+function setToken (){
+	var tokenString = window.location.href;
+	var prmstr = window.location.search;
+	prmstr = prmstr.substr(1, prmstr.length);
+	var prmarr = prmstr.split("&");
+	var token = 'noToken';
+	    for ( var i = 0; i < prmarr.length; i++) {
+	        var tmparr = prmarr[i].split("=");
+	        if(tmparr[0] == 'access_token'){
+	        	token = tmparr[1];
+	        	break;
+	        }
+	    }
+	console.log(token)
+	document.getElementById("tokenDiv").innerHTML = token;
+}
+
+</script>
+</body>
+</html>
