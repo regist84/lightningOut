@@ -25,6 +25,9 @@ xhr.addEventListener("readystatechange", function() {
 xhr.open("POST", "https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9HxRZv05HarSNhUaT3bZ5ZTp6h5EoN2uwdVz5OtxkHitGgK6.hSkNTER5pVZPFbp50zVYQnfV0.VlKEw9&client_secret=94E1874F05587BCD5E8ADCD0399B1FAE788791BBEF6303718CF4B4E65616666E&username=antonio.genovese@gmail.com&password=Ag150918aXzAimnWGl9BlZA6NcgfIX0X");
 
 xhr.send();
+document.getElementById("tokenDiv").innerHTML = xhr.response;
+cosole.log(xhr.response);
+
 }
 
 </script>
