@@ -29,19 +29,20 @@
 	                    // callback when component is created and active on the page
 	                }
 	            );
-	        },
+		$Lightning.createComponent(
+			"c:buttonAddDocuments", // top-level component of your app
+			{ },                  // attributes to set on the component when created
+			"buttonAddDocuments",   // the DOM location to insert the component
+			function(cmp) {
+			    // callback when component is created and active on the page
+			}
+		);
+	    },
             "https://agenoves-dev-ed.lightning.force.com/", // endpoint of org as lightningEndPointURI
             document.getElementById("tokenDiv").textContent // access token as authToken 
     );
 	
-	 $Lightning.createComponent(
-		"c:buttonAddDocuments", // top-level component of your app
-		{ },                  // attributes to set on the component when created
-		"buttonAddDocuments",   // the DOM location to insert the component
-		function(cmp) {
-		    // callback when component is created and active on the page
-		}
-	);
+	 
 
 function setToken (){
 	var tokenString = window.location.href;
