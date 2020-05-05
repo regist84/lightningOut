@@ -21,7 +21,6 @@
 <script src="https://agenoves-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
 
 <script>
-	var token_acc = "00D0Y000000otHV!ARIAQE12KLrD8BSQdq5GMTm2b17UD7RrAiMv0OjX1p_InMzr.19q6W4ogNksFweTXyPLXJnBK39oKSBKnZP4z1r2yA9_rLGi";
 $Lightning.use("c:lightningOutApp",    // name of the Lightning app
 	function() {                  // Callback once framework and app loaded
 	    $Lightning.createComponent(
@@ -42,8 +41,7 @@ $Lightning.use("c:lightningOutApp",    // name of the Lightning app
 	);
     },
     "https://agenoves-dev-ed.lightning.force.com", // endpoint of org as lightningEndPointURI
-   // document.getElementById("tokenDiv").textContent // access token as authToken 
-	       token_acc.valueOf()
+    document.getElementById("tokenDiv").textContent.valueOf() // access token as authToken 
 );
 	
 	 
