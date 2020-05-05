@@ -5,10 +5,7 @@
     <title>Lightning Out</title>
 </head>
 
-<body onload="setToken()">
-
-<div id= 'tokenDiv' style='display: none;'> 
-</div>
+<body>
 <div id='containerForm' style='width: 40%;border: 1px solid black;margin: 0 auto;margin-bottom: 10px;margin-top: 50px'>
 <div id='customEditFormLocator'></div>	
 </div>
@@ -17,12 +14,9 @@
 <div id='buttonAddDocuments'></div>
 </div>
 	
-	
 <script src="https://agenoves-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
 
 <script>
-	var access_token = getToken();
-	console.log('access_token: ' + access_token);
 $Lightning.use("c:lightningOutApp",    // name of the Lightning app
 	function() {                  // Callback once framework and app loaded
 	    $Lightning.createComponent(
@@ -43,7 +37,7 @@ $Lightning.use("c:lightningOutApp",    // name of the Lightning app
 	);
     },
     "https://agenoves-dev-ed.lightning.force.com", // endpoint of org as lightningEndPointURI
-    access_token.valueOf() // access token as authToken 
+    getToken().valueOf() // access token as authToken 
 );
 	
 	 
@@ -62,8 +56,6 @@ function getToken (){
 		}
 	}
 	return token;
-	//console.log(token);
-	//document.getElementById("tokenDiv").innerHTML = token;
 }
 
 </script>
