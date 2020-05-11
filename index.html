@@ -46,7 +46,6 @@ $Lightning.use("c:lightningOutApp",    // name of the Lightning app
     getToken().valueOf() // access token as authToken 
 );
 	 var messageParams={type: event.getParams().type,message: event.getParams().message,         mode:event.getParams().mode}; 
-	console.log('messageParams:' + messageParams);
 parent.postMessage(messageParams, lexPath);
 }
 });
