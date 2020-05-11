@@ -19,7 +19,8 @@
 <script>
 $Lightning.use("c:lightningOutApp",    // name of the Lightning app
 	function() {                  // Callback once framework and app loaded
-	    $Lightning.createComponent(
+	//first component    
+	$Lightning.createComponent(
 		"c:customEditForm", // top-level component of your app
 		{ },                  // attributes to set on the component when created
 		"customEditFormLocator",   // the DOM location to insert the component
@@ -27,6 +28,7 @@ $Lightning.use("c:lightningOutApp",    // name of the Lightning app
 		    // callback when component is created and active on the page
 		}
 	    );
+	//second component
 	$Lightning.createComponent(
 		"c:buttonAddDocuments", // top-level component of your app
 		{ },                  // attributes to set on the component when created
