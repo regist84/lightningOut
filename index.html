@@ -45,12 +45,7 @@ $Lightning.use("c:lightningOutApp",    // name of the Lightning app
     "https://agenoves-dev-ed.lightning.force.com", // endpoint of org as lightningEndPointURI
     getToken().valueOf() // access token as authToken 
 );
-	 var messageParams={type: event.getParams().type,message: event.getParams().message,         mode:event.getParams().mode}; 
-parent.postMessage(messageParams, lexPath);
-}
-});
-});
-});    
+	 var messageParams={type: event.getParams().type,message: event.getParams().message,         mode:event.getParams().mode};     
 	
 	 
 
